@@ -1,0 +1,55 @@
+﻿@model Signo_Zodiacal.Models.SignosViewModel
+
+
+<div class="row">
+
+    <div class="col-md-6 offset-3">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h3>Seleccione su fecha</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-controller="SignoZodiacal" asp-action="Index">
+                    <div class="mb-3">
+                        <label asp-for="Dia" class="form-label">Dia:</label>
+                        <input type="number" class="form-control" asp-for="Dia" name="Dia" id="Dia" value="@Model.Dia" min='1' max='31' step='1'>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Mes">Seleccione el mes:</label>
+                        <select class="form-select" asp-for="Mes" name="Mes" id="Dia" value="@Model.Mes">
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                    </div>
+
+                      <div class="mb-3 text-center">
+                    <button type="submit" class="btn bg-dark bg-gradient text-white fs-5 fw-bold" id="Consultar" value="Consultar" name="Consultar">Consultar</button>
+                      </div>
+
+
+                      <div class="mb-3 text-center">
+                    <label asp-for="Resultado" class="form-label text-center fw-bold fs-4" name="Resultado" id="Resultado" value="@Model.Resultado"></label>
+                    <input type="text" class="form-control text-center bg-danger bg-gradient text-white fs-5 fw-bold" asp-for="Resultado" name="Resultado" id="Resultado" value="@Model.Resultado" readonly>
+                     </div>
+
+                </form>
+               
+
+             </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
